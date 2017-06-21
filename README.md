@@ -1,5 +1,5 @@
 # APDetector
-Matlab GUI for automatic action potential detection of intracellular recordings. Action potentials going above a defined threshold are automatically detected and their timestamps, peak voltage, amplitude, half width etc. are stored into a structure named APStruct in the workspace. The results can be converted into a table and exported as a comma-separated value file for further analyses.
+Matlab GUI for automatic action potential detection of membrane potential recordings. Action potentials going above a defined threshold are automatically detected and their timestamps, peak voltage, amplitude, half width etc. are stored into a structure named APStruct in the workspace. The results can be converted into a table and exported as a comma-separated value file for further analyses.
 
 ## Getting Started
 
