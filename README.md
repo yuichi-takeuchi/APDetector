@@ -13,7 +13,7 @@ The code has been tested with Matlab ver 8.6 (R2015b).
 * Give your Matlab pass to the m and fig files.
 
 ### How to use
-1. Launch the Matlab.
+1. Launch Matlab.
 2. Launch APDetector as
 ```
 guide APDetector.fig
@@ -30,12 +30,13 @@ StructInfo.sr = 20000;
 ```
 5. Data must be stored in a structure named as "StructDataX", where X is a group name integer. StructDataX must has "Voltage" cell field each of which several voltage sweeps as column vectors. Each series of sweeps must be treated as a record of the StructDataX structure. For example, the 3rd sweep of the 2nd series of the 1st group must be accessed as "StructData1(2).Voltage{3,1}". An script for automatic organization of the StructData structure can be found in the demo script (DemoScript.m).
 6. Define the numbers of group, series, and sweep of the source wave on the popupmenus on the APDetector GUI. After that define a threshold voltage in the edit box 1 on the GUI.
-7. Press "Plot and Detect" button on the GUI. The source wave will be shown on the graph1 and action potentials will be detected and their peak will be labeled with red open circles.
+7. Press "Plot and Detect" button on the GUI. The source wave will be shown on the graph1 and action potentials will be detected and their peaks will be labeled with red open circles.
 8. Press "Add and Calc" button. Time stamp, peak voltage, and other parameters of each action potential will be stored into a structure named as "APStruct".
 9. Repeat 6 to 8.
 
-DemoData.mat has a variable (StructData1), which includes in vivo patch-clamp data from a pyraminal neuron in the V1 cortex.
-Load the data and lunch cells in the DemoScript.m one-by-one to see how it works.
+## Demostration
+* DemoData.mat has a variable (StructData1), which includes in vivo patch-clamp data from a pyraminal neuron in the V1 cortex.
+* Load the data and launch cells in the DemoScript.m one-by-one to see how it works.
 
 ## DOI
 
