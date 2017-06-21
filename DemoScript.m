@@ -4,7 +4,7 @@ StructInfo.matfilenamebase = 'Demo';
 StructInfo.expnum = 1;
 StructInfo.sr = 20000;
 
-%% (Optional) Extraction of voltage and current channels from mat file outputs of PatchMaster software (ver 2.901, HEKA)
+%% (Optional) Automatic organization of a source structure (StructDataX) from mat file outputs of PatchMaster software (ver 2.901, HEKA)
 % k = StructInfo.expnum;
 % evalstr = ['StructData' num2str(k) ' = struct([]);'];
 % eval(evalstr)
