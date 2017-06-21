@@ -1,5 +1,5 @@
 # APDetector
-Matlab GUI for automatic action potential detection of intracellular recordings.
+Matlab GUI for automatic action potential detection of intracellular recordings. Action potentials go above a defined threshold are automatically detected and their timestamps, peak voltage, amplitude, half width etc. are stored into a structure named APStruct in the workspace. The results can be converted into a table and exported as a comma-separated value file.
 
 ## Getting Started
 
@@ -14,54 +14,36 @@ The code has been tested with Matlab ver 8.6 (R2015b).
 
 ### How to use
 1. Launch the Matlab.
-2. Launch NiDaqControlPanel as
+2. Launch APDetector as
 ```
-guide NiDaqControlPanel.fig
+guide APDetector.fig
 ```
 and Run Figure (Ctrl+T).
-3. or Run NiDaqControlPanel.fig directly.
+3. or Run APDetector.fig directly.
 ```
-NiDaqControlPanel
+APDetector
 ```
-4. Set channels (Analog inputs: AiX, Analog outputs: AoX, and Digital outputs: DoX), and parameters including sampling rate, timeout, latency on the control panel.
-5. If needed, set output analog waveform as stimulus wave by making it in the pseude command line in the control panel (edit10). Stimulation waves can be imported from workspace of Matlab by selecting it with popupmenu9. The output stimulus wave will be displayed on the axes2 (axis below on the panel).
-6. Select a function you want to launch from popupmenu10 in function group.
-7. Press Run button.
-
-* Without GUI
-
-Functions with yf prefixes can work in stand-alone. It would be useful when multiple trials with differenct parameters needed to be automated. Several examples are given in NiDaqControlPanelDemo.m.
-
-## Functions
-* yfNiDaqAiAoB: AnalogInput scans and AnalogOutput stimuli as a bachground process.
-* yfNiDaqAiAoF: AnalogInput scans and AnalogOutput stimuli as a forward process.
-* yfNiDaqAiFoFTrig: AnalogInput scans and AnalogOutput stimuli as a forward process triggered by an external digital input.
-* yfNiDaqAiB: AnalogInput scans as a bachground process.
-* yfNiDaqAiBCont: AnalogInput scans as a contineous bachground process.
-* yfNiDaqAiF: AnalogInput scans as a forward process.
-* yfNiDaqAiFTrig: AnalogInput scans as a forward process triggered by an external digital input.
-* yfNiDaqAoB: AnalogOutput stimuli as a bachground process.
-* yfNiDaqAoBCont: AnalogOutput stimuli as a contineous bachground process.
-* yfNiDaqAoBContDoConst: AnalogOutput stimuli as a contineous bachground process with constant digital outputs.
-* yfNiDaqAoF: AnalogOutput stimuli as a forward process.
-* yfNiDaqAoSS: Single scan of analog output channels.
-* yfNiDaqDo: Single scan of digital output channels.
-* yfNiDaqLoadLog: Load log (log.bin).
-
-## Help
-Use the help function as below.
+4. The number of "group", any number of integer and sampling rate of recordings must be stored in a structure named as "StructInfo". For example:
 ```
-help yfNiDaqAoBContDoConst
+StructInfo.expnum = 1;
+StructInfo.sr = 20000;
 ```
+5. Data must be stored in a structure named as "StructDataX", where X is a group name integer. StructDataX must has "Voltage" cell field each of which several voltage sweeps as column vectors. Each series of sweeps must be treated as a record of the StructDataX structure. For example, the 3rd sweep of the 2nd series of the 1st group must be accessed as "StructData1(2).Voltage{3,1}". An script for automatic organization of the StructData structure can be found in the demo script (DemoScript.m).
+6. Define the numbers of group, series, and sweep of the source wave on the popupmenus on the APDetector GUI. After that define a threshold voltage in the edit box 1 on the GUI.
+7. Press "Plot and Detect" button on the GUI. The source wave will be shown on the graph1 and action potentials will be detected and their peak will be labeled with red open circles.
+8. Press "Add and Calc" button. Time stamp, peak voltage, and other parameters of each action potential will be stored into a structure named as "APStruct".
+9. Repeat 6 to 8.
+
+DemoData.mat has a variable (StructData1), which includes in vivo patch-clamp data from a pyraminal neuron in the V1 cortex.
+Load the data and lunch cells in the DemoScript.m one-by-one to see how it works.
 
 ## DOI
-[![DOI](https://zenodo.org/badge/94625377.svg)](https://zenodo.org/badge/latestdoi/94625377)
 
 ## Versioning
 We use [SemVer](http://semver.org/) for versioning.
 
 ## Releases
-* Ver 1.0.0, 2017/06/17
+* Ver 1.0.0, 2017/06/21
 
 ## Authors
 * **Yuichi Takeuchi PhD** - *Initial work* - [GitHub](https://github.com/yuichi-takeuchi)
