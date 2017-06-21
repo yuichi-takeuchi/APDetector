@@ -39,6 +39,7 @@ StructInfo.sr = 20000;
 * Load the data and launch cells in the DemoScript.m one-by-one to see how it works.
 
 ## DOI
+[![DOI](https://zenodo.org/badge/95033472.svg)](https://zenodo.org/badge/latestdoi/95033472)
 
 ## Versioning
 We use [SemVer](http://semver.org/) for versioning.
