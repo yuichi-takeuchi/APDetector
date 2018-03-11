@@ -59,3 +59,6 @@ This project is licensed under the MIT License.
 * The Uehara Memorial Foundation
 * Department of Physiology, University of Szeged, Hungary
 
+## References
+APDetector has been used for the following work:
+* Vöröslakos M, Takeuchi Y, Brinyiczki K, Zombori T, Oliva A, Fernández-Ruiz A, Kozák G, Kincses ZT, Iványi B, Buzsáki G, Berényi A (2018) Direct effects of transcranial electric stimulation on brain circuits in rats and humans. Nat Commun 9: 483.
