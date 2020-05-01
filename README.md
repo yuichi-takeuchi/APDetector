@@ -1,19 +1,19 @@
 # APDetector
-Matlab GUI for automatic action potential detection of membrane potential recordings. Action potentials going above a defined threshold are automatically detected and their timestamps, peak voltage, amplitude, half width etc. are stored into a structure named APStruct in the workspace. The results can be converted into a table and exported as a comma-separated value file for further analyses.
+MATLAB GUI for automatic action potential detection of membrane potential recordings. Action potentials going above a defined threshold are automatically detected and their timestamps, peak voltage, amplitude, half width etc. are stored into a structure named APStruct in the workspace. The results can be converted into a table and exported as a comma-separated value file for further analyses.
 
 ## Getting Started
 
 ### Prerequisites
-* Matlab (https://www.mathworks.com/products/matlab.html)
+* MATLAB (https://www.mathworks.com/products/matlab.html)
 
-The code has been tested with Matlab ver 8.6 (R2015b).
+The code has been tested with MATLAB ver 8.6 (R2015b).
 
 ### Installing
-* Install Matlab.
-* Give your Matlab pass to the m and fig files.
+* Install MATLAB.
+* Give your MATLAB path to the m and fig files.
 
 ### How to use
-1. Launch Matlab.
+1. Launch MATLAB.
 2. Launch APDetector as
 ```
 guide APDetector.fig
@@ -50,7 +50,7 @@ We use [SemVer](http://semver.org/) for versioning.
 ## Authors
 * **Yuichi Takeuchi PhD** - *Initial work* - [GitHub](https://github.com/yuichi-takeuchi)
 * Affiliation: Department of Physiology, University of Szeged, Hungary
-* E-mail: yuichi-takeuchi@umin.net
+* E-mail: takeuchi.yuichi@med.u-szeged.hu
 
 ## License
 This project is licensed under the MIT License.
